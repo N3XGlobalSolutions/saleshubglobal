@@ -8,7 +8,7 @@ import { Hero } from "../components/hero/Hero";
 import { Footer } from "../components/layout/Footer";
 import { InteractiveCanvas } from "../components/ui/InteractiveCanvas";
 
-// Dynamically load heavy client modules to reduce the initial JS bundle payload
+// Dynamically load he33avy client modules to reduce the initial JS bundle payload
 const Products = dynamic(
   () => import("../components/products/Products").then((m) => m.Products),
   { ssr: false, loading: () => <ComponentFallback /> }
