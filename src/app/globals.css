@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-primary-bg: #F7F8FC;
+  --color-primary-text: #071126;
+  --color-accent-blue: #5E5BFF;
+  --color-accent-purple: #8B6DFF;
+  --color-accent-orange: #FF9A2F;
+  --color-glow-cyan: #00E5FF;
+  --color-soft-gray: #A7AAB5;
+  
+  --shadow-premium: 0 10px 30px -10px rgba(7, 17, 38, 0.04), 0 1px 3px rgba(7, 17, 38, 0.02);
+  --shadow-glow-blue: 0 0 50px -10px rgba(94, 91, 255, 0.2);
+  --shadow-glow-purple: 0 0 50px -10px rgba(139, 109, 255, 0.2);
+  --shadow-glow-orange: 0 0 50px -10px rgba(255, 154, 47, 0.2);
+  --shadow-glow-cyan: 0 0 50px -10px rgba(0, 229, 255, 0.2);
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F8FC;
+    color: #071126;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+}
+
+/* Custom engineering grid background layer */
+.engineering-grid {
+  background-image: 
+    linear-gradient(to right, rgba(7, 17, 38, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 17, 38, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+}
+
+/* Sub-grid for fine details */
+.engineering-grid-fine {
+  background-image: 
+    linear-gradient(to right, rgba(7, 17, 38, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 17, 38, 0.01) 1px, transparent 1px);
+  background-size: 15px 15px;
+  background-position: center center;
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Glassmorphism utility */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glassmorphism-dark {
+  background: rgba(7, 17, 38, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient text utility */
+.gradient-text-blue-purple-orange {
+  background: linear-gradient(135deg, #5E5BFF 0%, #8B6DFF 50%, #FF9A2F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(rgba(7, 17, 38, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Premium micro scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F8FC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A7AAB5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B6DFF;
+}
